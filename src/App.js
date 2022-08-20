@@ -3,12 +3,12 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 import Navbar from './components/navbar'
 import Home from './pages/home/home'
-import Favorite from './pages/favorite/favorite'
-import Search from './pages/search/search'
-import Recipes from './pages/recipes/recipes'
-import RecipeInfo from './pages/recipeInfo/recipeInfo'
-import About from './pages/about/about'
-import Error from './pages/error/error'
+import Favorites from './pages/favorites'
+import Search from './pages/search'
+import Recipes from './pages/recipes'
+import RecipeInfo from './pages/recipeInfo'
+import About from './pages/about'
+import Error from './pages/error'
 
 const App = () => {
   return (
@@ -16,7 +16,7 @@ const App = () => {
       <Navbar/>
       <Routes>
         <Route exact path='/' element={<Home/>}/>
-        <Route exact path='/favorites' element={<Favorite/>}/>
+        <Route exact path='/favorites' element={<Favorites/>}/>
         <Route exact path='/search' element={<Search/>}/>
         <Route exact path='/search/:search' element={<Search/>}/>
         <Route exact path='/recipes' element={<Recipes/>}/>

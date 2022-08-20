@@ -4,6 +4,7 @@ export const AppContext=React.createContext()
 
 export const AppProvider = ({ children }) => {
   const [searchResults, setSearchResults]=useState([])
+  const [favoriteRecipes, setFavoriteRecipes]=useState([])
 
   const getRecipeInfo = (object) => {
     const recipes=object.map(item => {
@@ -14,7 +15,7 @@ export const AppProvider = ({ children }) => {
   }
 
   return (
-    <AppContext.Provider value={{ getRecipeInfo, setSearchResults, searchResults }}>
+    <AppContext.Provider value={{ getRecipeInfo, setSearchResults, favoriteRecipes, setFavoriteRecipes, searchResults }}>
       {children}
     </AppContext.Provider>
   )

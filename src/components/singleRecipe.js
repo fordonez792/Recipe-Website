@@ -1,10 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { FaRegHeart, FaHeart, FaRegClock, FaUsers } from 'react-icons/fa'
+import { useMyContext } from '../context/context'
+import useArray from '../hooks/useArray'
 
 
 const SingleRecipe = ({ id, image, title, prep, healthy, servings }) => {
-  const [like, setLike]=useState(false) 
+  const { favoriteRecipes, setFavoriteRecipes }=useMyContext()
+  const { array, push, filter }=useArray(favoriteRecipes)
+  const [like, setLike]=useState(false)
 
   return (
     <article className='single-recipe'>

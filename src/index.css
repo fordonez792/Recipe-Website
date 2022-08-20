@@ -8,6 +8,7 @@
   --green: #717744;
   --dark-green: #373d20;
   --red: #e31b23;
+  --beige: #fff0db;
 }
 
 *,
@@ -22,7 +23,7 @@ body {
   font-family: 'Roboto', sans-serif;
   overflow: hidden;
   overflow-y: auto;
-  background-color: var(--white);
+  background-color: var(--beige);
   color: var(--black);
   letter-spacing: 0.2rem;
   overscroll-behavior-x: none;
@@ -51,18 +52,20 @@ body::-webkit-scrollbar{
   padding: 0 40px;
 }
 #navbar .nav-header{
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: max-content;
   text-decoration: none;
 }
 .nav-header h1{
   font-size: 2.7rem;
   text-align: center;
   color: var(--green);
-  width: 100%;
   font-family: 'Dancing Script', cursive;
 }
 .nav-menu{
@@ -119,6 +122,7 @@ body::-webkit-scrollbar{
   cursor: pointer;
   transition: 0.3s ease background-color, 0.3s ease color;
 }
+.menu ul li.active,
 .menu ul li:hover{
   background-color: var(--light-green);
   color: var(--white);
@@ -223,13 +227,30 @@ body::-webkit-scrollbar{
   opacity: 0.75;
   z-index: 1;
 }
-.top img{
+.top .img-container{
   position: relative;
+  height: 350px;
+  width: 100%;
+}
+.top img{
+  position: absolute;
   display: block;
   height: 350px;
   width: 100%;
   object-fit: fill;
-  z-index: 0;
+  z-index: 1;
+  opacity: 0;
+  transition: 0.3s ease transform, 0.3s ease opacity;
+}
+img.left{
+  transform: translateX(-100%);
+}
+img.right{
+  transform: translateX(100%);
+}
+img.center{
+  transform: translateX(0);
+  opacity: 1;
 }
 .top h1{
   position: absolute;
@@ -264,7 +285,7 @@ body::-webkit-scrollbar{
   width: 275px;
   height: 40px;
   border-radius: 30px;
-  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 .searchbar-form label{
   position: absolute;
@@ -283,6 +304,29 @@ body::-webkit-scrollbar{
   position: absolute;
   padding: 10px;
   height: 20px;
+}
+.div-container{
+  position: absolute;
+  height: 20px;
+  width: 30%;
+  top: 92%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  z-index: 3;
+}
+.div-container>*{
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  border: 1px solid var(--white);
+  cursor: pointer;
+  transition: 0.3s ease background-color;
+}
+.div-container>.active{
+  background-color: var(--white);
 }
 .bottom{
   position: relative;
@@ -313,10 +357,12 @@ body::-webkit-scrollbar{
   position: relative;
   margin: 10px;
   height: 34vh;
-  width: 40vw;
+  width: 41.5vw;
   overflow: hidden;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+  border: 1px solid var(--black);
+  background-color: var(--white);
 }
 .single-recipe-container{
   text-decoration: none;
@@ -505,7 +551,7 @@ body::-webkit-scrollbar{
   grid-auto-rows: max-content;
   grid-template-columns: repeat(2, max-content);
   justify-content: center;
-  grid-gap: 10px;
+  grid-column-gap: 10px;
   padding: 10px;
 }
 /* End of Search Page */
@@ -582,3 +628,59 @@ body::-webkit-scrollbar{
   color: var(--white);
 }
 /* End of Error Page */
+
+/* About Page */
+#about{
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+#about div{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+}
+#about div h1{
+  font-size: 4rem;
+  color: var(--green);
+  font-family: 'Dancing Script', cursive;
+  margin: 20px;
+  border-bottom: 3px solid var(--green);
+}
+#about div p{
+  margin: 20px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+/* End of About Page */
+
+/* Favorites Page */
+#favorites{
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+#favorites .container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: absolute;
+  top: 10vh;
+  width: 100%;
+}
+#favorites .header{
+  width: 100%;
+  margin: 40px;
+}
+#favorites .header h1{
+  text-align: center;
+  font-size: 1.8rem;
+  color: var(--green);
+  font-family: 'Dancing Script', cursive;
+}
+/* End of Favorites Page */

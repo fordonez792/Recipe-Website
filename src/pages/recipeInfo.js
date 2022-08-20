@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { FaCheck } from 'react-icons/fa'
 import { useParams } from 'react-router-dom'
-import useFetch from '../../hooks/useFetch'
-import SingleRecipe from '../../components/singleRecipe'
-import Loading from '../../components/loading'
+import useFetch from '../hooks/useFetch'
+import SingleRecipe from '../components/singleRecipe'
+import Loading from '../components/loading'
 
 const url='https://api.spoonacular.com/recipes'
 
 const RecipeInfo = () => {
   const { id }=useParams()
-  const { data, loading }=useFetch(`${url}/${id}/information?apiKey=${process.env.REACT_APP_API_KEY}`)
+  const { data, loading }=useFetch(`${url}/${id}/information?apiKey=${process.env.REACT_APP_API_KEY1}`)
   
   if(loading) return <Loading/>
   if(!data) return <h1>No data</h1>

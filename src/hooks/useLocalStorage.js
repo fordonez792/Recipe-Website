@@ -16,6 +16,8 @@ const useLocalStorage = (key, defaultValue) => {
   const remove = useCallback(() => {
     setValue(undefined)
   }, [])
+
+  return [value, setValue, remove]
 }
 
 export default useLocalStorage

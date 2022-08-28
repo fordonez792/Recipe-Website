@@ -1,13 +1,9 @@
 import React from 'react'
-import { useMyContext } from '../context/context'
-import SingleRecipe from '../components/singleRecipe'
-import useArray from '../hooks/useArray'
+import { useMyContext } from '../../context/context'
+import FavoriteRecipes from './favoriteRecipes'
 
 const Favorite = () => {
   const { favoriteRecipes }=useMyContext()
-  const { array }=useArray(favoriteRecipes)
-
-  console.log(favoriteRecipes, array)
 
   return (
     <section id="favorites">
@@ -18,13 +14,14 @@ const Favorite = () => {
         <article className="favorites">
           {favoriteRecipes.length>0 ? 
           favoriteRecipes.map(recipe => {
-            return <SingleRecipe key={recipe.id} {...recipe}/>
+            return <FavoriteRecipes key={`${recipe.id}-favorite`} {...recipe}/>
           })
-          : <h2>No recipes currently found!</h2>}
+          : <div className='no-recipes'><h2>No recipes currently found!</h2></div>}
         </article>
       </div>
     </section>
   )
 }
+// Component will render the favorites menu option, if there are recipes that have been previously liked then they will be found and displayed in this component
 
 export default Favorite

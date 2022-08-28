@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react'
 import Searchbar from '../../components/searchbar'
-import images from '../../assets/images'
+import { images } from '../../assets/images'
 import useInterval from '../../hooks/useInterval'
 
 const Top = () => {
@@ -11,16 +11,20 @@ const Top = () => {
   const { reset }=useInterval(() => {
     Array.from(dotsRef.current.children).forEach(div => {
       div.classList.remove('active')
+      // Firstly remove all active classes from dots
     })
     if(index>=4){
       setIndex(0)
       dotsRef.current.children[0].classList.add('active')
+      // Covers so that index state wont go above 5, as there are only 5 images
     }
     if(index<4){
       setIndex(index+1)
       dotsRef.current.children[index+1].classList.add('active')
+      // Otherwise just move to next index
     }
   }, 20000)
+  // Sets an interval for 20s moving background to next image
 
   const handleClick = (number) => {
     setIndex(number)
@@ -29,6 +33,7 @@ const Top = () => {
     })
     dotsRef.current.children[number].classList.add('active')
     reset()
+    // Will reset interval on click of a dot and set it to active as well as displaying the correct image for background
   }
 
   return (
@@ -55,5 +60,6 @@ const Top = () => {
     </article>
   )
 }
+// This component will return an image slider where the user can choose which image to look at by clicking on the dots, as well as the searchbar component
 
 export default Top

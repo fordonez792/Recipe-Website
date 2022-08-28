@@ -10,5 +10,6 @@ const Home = () => {
     </section>
   )
 }
+// Home component will be separated into 2 smaller files to allow for more clean code
 
 export default Home

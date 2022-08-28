@@ -1,15 +1,18 @@
 import { useState, useEffect } from 'react'
 import { useMyContext } from '../../context/context'
-import useFetch from '../../hooks/useFetch'
 import SingleRecipe from '../../components/singleRecipe'
 import Loading from '../../components/loading'
+import useFetch from '../../hooks/useFetch'
 
-const url=`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY1}&number=10`
+const url=`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=10` 
 
 function Bottom() {
   const { getRecipeInfo }=useMyContext()
   const [popularRecipes, setPopularRecipes]=useState([])
   const { data, loading, error }=useFetch(url)
+  // fetching for popular recipes in api
+
+  if(error) console.log(error)
 
   useEffect(() => {
     if(data){
@@ -18,6 +21,7 @@ function Bottom() {
       setPopularRecipes(newRecipes)
     }
   }, [data])
+  // Sets recipes on popular recipes every time the data is changes an onMount
 
   return (
     <article className='bottom'>
@@ -31,5 +35,6 @@ function Bottom() {
     </article>
   )
 }
+// This component will fetch for popular recipes and return the bottom part of the home component, it will render the popular recipes found and provide them through the singleRecipe component in a horizontal slider
 
 export default Bottom

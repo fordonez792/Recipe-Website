@@ -29,4 +29,6 @@ const useInterval = (callback, delay) => {
   return { reset, clear }
 }
 
+// Custom hook used to set an interval for the home page automatic image slider
+
 export default useInterval

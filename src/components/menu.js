@@ -7,10 +7,12 @@ const Menu = ({ displayMenu, setDisplayMenu }) => {
   const menuRef=useRef([])
   const temp=window.location.pathname
   const path=temp.split('/', 2)
+  // path will allow to know which component is being rendered therefore allowing to set the active class correctly
 
   const helperFunction = () => {
     menuRef.current.forEach(item => {
       item.classList.remove('active')
+      // removes the  active class from all menu options
     })
     if(path[1]===''){
       menuRef.current[0].classList.add('active')
@@ -27,6 +29,7 @@ const Menu = ({ displayMenu, setDisplayMenu }) => {
     if(path[1]==='about'){
       menuRef.current[4].classList.add('active')
     }
+    // adds the active class to the one that was just clicked
   }
 
   useEffect(() => {
@@ -53,7 +56,7 @@ const Menu = ({ displayMenu, setDisplayMenu }) => {
         </Link>
         <FaBookOpen className={`background-icon ${iconDisplay===4 ? 'active' : null}`}/>
         <Link to='/about' className='link'>
-          <li ref={el => menuRef.current[4]=el} onMouseOver={() => setIconDisplay(5)} onClick={helperFunction}>About</li>
+          <li ref={el => menuRef.current[4]=el} onMouseOver={() => setIconDisplay(5)} onClick={helperFunction}>About Us</li>
         </Link>
         <FaInfoCircle className={`background-icon ${iconDisplay===5 ? 'active' : null}`}/>
       </ul>
@@ -74,5 +77,6 @@ const Menu = ({ displayMenu, setDisplayMenu }) => {
     </section>
   )
 }
+// component will return menu items with conditional rendering of a single background icon depending on the item the mouse is hovering
 
 export default Menu

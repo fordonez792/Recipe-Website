@@ -15,6 +15,7 @@ const useFetch = (url) => {
   }, [url])
 
   return { data, loading, error }
-};
+}
+// Hook allows to fetch data using axios from a given url
 
 export default useFetch

@@ -12,5 +12,6 @@ const Error = () => {
     </section>
   )
 }
+// This component will only work if user tries to access a component or page that does not exist for this website, and has a button leading to home component
 
 export default Error

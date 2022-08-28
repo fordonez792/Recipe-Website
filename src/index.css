@@ -413,10 +413,10 @@ img.center{
 }
 .single-recipe{
   position: relative;
-  margin: 10px;
+  margin: 5px;
   margin-top: 5px;
   height: 260px;
-  width: 220px;
+  width: 180px;
   overflow: hidden;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
@@ -637,7 +637,7 @@ img.center{
 .results-container{
   display: grid;
   grid-auto-rows: max-content;
-  grid-template-columns: repeat(1, max-content);
+  grid-template-columns: repeat(2, max-content);
   justify-content: center;
 }
 /* End of Search Page */
@@ -729,7 +729,7 @@ img.center{
   align-items: center;
   flex-direction: column;
   position: absolute;
-  top: 45%;
+  top: 48%;
   left: 50%;
   transform: translate(-50%, -50%);
   max-width: 700px;

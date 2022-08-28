@@ -6,7 +6,7 @@ const About = () => {
     <section id="about">
       <div>
         <h1>Welcome</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum autem id esse expedita explicabo beatae nisi dolor. Laudantium recusandae laborum neque, autem ipsum quis eius ad nesciunt. Dolorum itaque ducimus neque, voluptate, numquam qui architecto mollitia quisquam consectetur dolores facere veritatis explicabo blanditiis ipsa fuga ea sit quod! Repellendus, eius!</p>
+        <p>Welcome to Seven Spices! With the help of the spoonacular API, we can bring to your attention many incredible recipes that you can cook by yourself at home. You will definitely be surprised with your cooking skill after trying some of our recipes. Search among thousands of recipes found here by clicking the button below</p>
         <Link className='btn' to='/recipes'>Explore Recipes</Link>
       </div> 
       <article>

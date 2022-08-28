@@ -355,7 +355,7 @@ img.center{
   position: absolute;
   padding: 10px;
   height: 20px;
-  margin-left: 20px;
+  margin-left: 30px;
 }
 .clear{
   position: absolute;
@@ -608,6 +608,10 @@ img.center{
   position: relative;
   height: 100vh;
   width: 100%;
+  overflow-x: hidden;
+}
+#search::-webkit-scrollbar{
+  display: none;
 }
 .searchbar-container{
   position: relative;
@@ -633,7 +637,7 @@ img.center{
 .results-container{
   display: grid;
   grid-auto-rows: max-content;
-  grid-template-columns: repeat(2, max-content);
+  grid-template-columns: repeat(1, max-content);
   justify-content: center;
 }
 /* End of Search Page */

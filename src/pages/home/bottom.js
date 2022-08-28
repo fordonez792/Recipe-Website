@@ -4,7 +4,7 @@ import SingleRecipe from '../../components/singleRecipe'
 import Loading from '../../components/loading'
 import useFetch from '../../hooks/useFetch'
 
-const url=`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=10` 
+const url=`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY1}&number=10` 
 
 function Bottom() {
   const { getRecipeInfo }=useMyContext()

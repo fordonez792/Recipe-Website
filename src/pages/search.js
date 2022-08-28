@@ -6,7 +6,7 @@ import Searchbar from '../components/searchbar'
 import SingleRecipe from '../components/singleRecipe'
 import useFetch from '../hooks/useFetch'
 
-const url=`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&addRecipeInformation=true`
+const url=`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY1}&addRecipeInformation=true`
 
 const Search = () => {
   const { search }=useParams()

@@ -11,7 +11,7 @@ const url='https://api.spoonacular.com/recipes'
 const RecipeInfo = () => {
   const { push }=useMyContext()
   const { id }=useParams()
-  const { data, loading, error }=useFetch(`${url}/${id}/information?apiKey=${process.env.REACT_APP_API_KEY}&includeNutrition=true`)
+  const { data, loading, error }=useFetch(`${url}/${id}/information?apiKey=${process.env.REACT_APP_API_KEY1}&includeNutrition=true`)
   const [like, setLike]=useState(false)
 
   useEffect(() => {

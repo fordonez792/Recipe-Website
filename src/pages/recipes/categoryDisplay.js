@@ -6,7 +6,7 @@ import Loading from "../../components/loading"
 import SingleRecipe from "../../components/singleRecipe"
 import { diets } from "../../assets/images"
 
-const url=`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY}&number=10&addRecipeInformation=true`
+const url=`https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_API_KEY1}&number=10&addRecipeInformation=true`
 
 const CategoryDisplay = () => {
   const { getRecipeInfo }=useMyContext()

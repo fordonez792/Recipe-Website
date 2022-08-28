@@ -355,6 +355,7 @@ img.center{
   position: absolute;
   padding: 10px;
   height: 20px;
+  margin-left: 20px;
 }
 .clear{
   position: absolute;

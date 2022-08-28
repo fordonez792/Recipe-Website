@@ -88,7 +88,7 @@ body::-webkit-scrollbar{
   transition: 0.5s ease transform;
 }
 .bars.active{
-  transform: rotate(90deg);
+  transform: translate(-50%, -50%) rotate(90deg);
 }
 .menu{
   position: relative;
@@ -747,7 +747,7 @@ img.center{
   text-align: center;
 }
 #about article{
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 100vw;
   height: 110px;

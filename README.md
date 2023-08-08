@@ -6,6 +6,7 @@ With the use of React JS and Spoonacular API, created a website that allows user
 
 - React JS, React Hooks
 - CSS for website design
+- Local Storage
 - Spoonacular API to get recipes for website in various ways.
 
 # What I Learned
